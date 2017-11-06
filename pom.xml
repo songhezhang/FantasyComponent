@@ -31,7 +31,7 @@
 			</snapshots>
 		</repository>
 		<repository>
-        <id>milestone.repo.springsource.org</id>
+        		<id>milestone.repo.springsource.org</id>
 	        <name>repo.springsource.org-milestone</name>
 	        <url>https://repo.springsource.org/libs-milestone</url>
 	    </repository>
@@ -159,11 +159,13 @@
 			<artifactId>scala-library</artifactId>
 			<version>2.10.4</version>
 		</dependency>
+		<!--
 		<dependency>
 		    <groupId>org.springframework.scala</groupId>
 		    <artifactId>spring-scala</artifactId>
 		    <version>1.0.0.M2</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

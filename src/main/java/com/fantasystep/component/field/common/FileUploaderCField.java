@@ -324,15 +324,23 @@ class FileField extends AbstractCustomField
 	private FileType getFileType( File file )
 	{
 		byte[] prefix = new byte[20];
+		FileInputStream fis = null;
 		try
 		{
-			new FileInputStream( file ).read( prefix );
+			fis = new FileInputStream( file );
+			fis.read( prefix );
 		} catch( FileNotFoundException e )
 		{
 			e.printStackTrace();
 		} catch( IOException e )
 		{
 			e.printStackTrace();
+		} finally {
+			try {
+				fis.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		String s = FileField.bytesToHexString( prefix );
 		if( s.startsWith( "FFD8FF" ) || s.startsWith( "ffd8ff" ) )
